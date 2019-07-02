@@ -1,0 +1,7 @@
+<button class="btn btn-primary btn-sm font-weight-bold py-0" title="Click the button to open the action menu" [ngbPopover]="actionMenuPopover" container="body" popoverClass="custom-popover">---</button>
+<ng-template #actionMenuPopover>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item p-2 cursor-pointer" [title]="'Edit this ' + (isItemListing ? 'item' : 'user')" (click)="edit.emit(item)">Edit {{isItemListing ? 'Item' : 'User'}}</li>
+    <li class="list-group-item p-2 cursor-pointer" [title]="'Delete this ' + (isItemListing ? 'item' : 'user')" (click)="rowRemoved.emit(item)">Delete {{isItemListing ? 'Item' : 'User'}}</li>
+  </ul>
+</ng-template>

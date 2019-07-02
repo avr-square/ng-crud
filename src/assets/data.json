@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "name": "First User",
+    "phoneNumber": "77777777",
+    "address": "First address",
+    "items": [
+      {
+        "id": 1,
+        "image": "https://dummyimage.com/400x400/",
+        "name": "First item"
+      },
+      {
+        "id": 2,
+        "image": "https://dummyimage.com/400x400/",
+        "name": "Second item"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Second User",
+    "phoneNumber": "32423423423",
+    "address": "Second address",
+    "items": [
+      {
+        "id": 1,
+        "image": "https://dummyimage.com/400x400/",
+        "name": "Third item"
+      },
+      {
+        "id": 2,
+        "image": "https://dummyimage.com/400x400/",
+        "name": "Fourth item"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Third User",
+    "phoneNumber": "456564646",
+    "address": "Third address",
+    "items": []
+  }
+]

@@ -1,0 +1,40 @@
+<ng-container *ngIf="rows && rows.length; else noRows">
+  <div class="table-responsive border rounded">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <ng-container *ngIf="!isItemListing">
+            <th>Phone number</th>
+            <th>Address</th>
+          </ng-container>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-template ngFor let-row [ngForOf]="rows" let-i="index">
+          <tr>
+            <td>
+              <span class="cursor-pointer" [ngbTooltip]="!isItemListing ? (row.items.length + ' items available') : null" [routerLink]="!isItemListing ? ('/items/' + row.id) : null">
+                <img *ngIf="isItemListing" [src]="row.image" [alt]="row.name" class="img-item shadow rounded-circle mr-1">
+                {{row.name}}
+              </span>
+            </td>
+            <ng-container *ngIf="!isItemListing">
+              <td>{{row.phoneNumber}}</td>
+              <td>{{row.address}}</td>
+            </ng-container>
+            <td>
+              <app-action-menu [isItemListing]="isItemListing" [item]="row" [index]="i" (rowRemoved)="remove.emit($event)" (edit)="edit.emit($event)"></app-action-menu>
+            </td>
+          </tr>
+        </ng-template>
+      </tbody>
+    </table>
+  </div>
+</ng-container>
+<ng-template #noRows>
+  <div class="border-dashed rounded p-5">
+    <p class="lead mb-0 text-center font-weight-medium">Sorry..! No {{isItemListing ? 'item' : 'user'}} available.</p>
+  </div>
+</ng-template>

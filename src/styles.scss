@@ -1,0 +1,22 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.custom-popover {
+  border-radius: 5px !important;
+  .popover-body {
+    padding: 0;
+    .list-group {
+      border-radius: 5px !important;
+      overflow: hidden;
+    }
+  }
+}
+
+.border-dashed {
+  border: 2px dashed #ccc;
+}
+
+.img-item {
+  width: 40px;
+}

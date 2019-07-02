@@ -1,0 +1,13 @@
+<form (submit)="onFormSubmit()" #form="ngForm">
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="itemName" class="font-weight-medium">Name of the item</label>
+      <input type="text" name="name" [(ngModel)]="item.name" required id="itemName" class="form-control" #name="ngModel">
+      <small class="text-danger" *ngIf="name.invalid && form.submitted">Required</small>
+    </div>
+    <div class="text-right">
+      <button type="button" class="btn btn-outline-secondary" (click)="ngbActiveModal.close()">Cancel</button>
+      <button type="submit" class="btn btn-primary ml-2">Save Changes</button>
+    </div>
+  </div>
+</form>

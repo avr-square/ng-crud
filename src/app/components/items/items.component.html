@@ -1,0 +1,5 @@
+<h5 class="font-weight-bold d-flex align-items-center justify-content-between">
+  <span>Items for {{user?.name}}:-</span>
+  <button class="btn btn-primary btn-sm" routerLink="/users">Go back</button>
+</h5>
+<app-listing [rows]="user?.items || []" [isItemListing]="true" (edit)="editItem($event)" (remove)="removeItem($event)"></app-listing>
